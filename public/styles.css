@@ -1,0 +1,299 @@
+
+.background-image{
+   height: 600px;
+   background-size: cover;
+   background: #ad1457;
+}
+
+.background2{
+    background: #333333;
+    height: 400px;
+    background-size: cover;
+}
+body{
+  margin: 0px;
+  font-family: 'Open Sans', sans-serif;
+}
+.home-navigation{
+  background-color: #78002e;
+  padding: 1% 0%;
+}
+.navigation-links{
+      margin: 0px;
+}
+.navigation-item{
+  margin: 0px 30px;
+  padding: 15px;
+  display: inline-block;
+}
+.navigation-item-login{
+  margin: 0px 35% 0% 0%;
+  padding: 15px;
+  display: inline-block;
+}
+.nav-links{
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  text-decoration: none;
+}
+.slogan{
+    font-size: 28px;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    padding: 1%;
+    border-style: solid;
+    border-radius: 20px;
+    border-width: thin;
+    width: 30%;
+}
+.slogan-descript{
+    font-size: 72px;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    padding: 3% 0%;
+}
+
+a:hover { 
+    color: white;
+    border:solid white;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.slogan-descript-2{
+    font-size: 24px;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    padding: 3% 0%;
+}
+.slog-desc{
+  text-align: center;
+}
+
+.offset-1 {
+    height: 100px;
+}
+.offset-2 {
+    height: 40px;
+}
+.intro-descript{
+  font-size: 28px;
+  padding: 4% 10%;
+  text-align: center;
+}
+
+.company-info{
+  position: absolute;
+  top: 40px;
+}
+
+.work-descript{
+  font-size: 24px;
+  padding: 4% 10%;
+  text-align: center;
+}
+.descript{
+  text-align: center;
+  padding: 1% 0%;
+}
+.descript-text{
+  font-size:20px;
+  padding: 30px 0px 0px 0px;
+  font-weight: 100;
+}
+
+.center-header{
+  text-align: center;
+}
+.profile-pic{
+  height: 250px;
+  width: 250px;
+  border-radius: 150px; 
+}
+.experience{
+  width:100%;
+}
+.your-class{
+  color:white;
+}
+
+.fa-5x{
+  color:#333333;
+}
+
+$gray: #dddddd;
+h1,
+h2,
+h3 {
+  font-weight: 300;
+}
+
+.container {
+  padding: 1em;
+}
+
+
+.portfolio{
+  height: 300px;
+  text-align: center;
+}
+
+span.slogan-descript-2 {
+    font-size: 18px;
+    color: white;
+}
+
+.tiles{
+  margin:5% 10%;
+  display: inline-block;
+  float: left;
+  /*background-color: gray;*/
+  color: white;
+  border-radius:20px;
+  width:30%;
+  height: 250px;
+  text-align: center;
+  font-size: 20px;
+  position: relative;
+
+}
+
+.tiles-front{
+  width: 100%;
+  background-size: 100%;
+  background-color: #f50057;
+  background-repeat: no-repeat;
+  border-radius: 40px;
+  padding: 10px;
+}
+
+.command-wear{
+  background-image: url(images/commandwear.png);
+}
+
+.print-a-pal{
+  background-image: url(images/print2_white.png);
+  background-position-y: 40px;
+}
+
+.tiles-back{
+  background: #ff5983;
+  width:100%;
+  border-radius: 40px;
+  padding: 10px;
+}
+
+.tiles-text{
+   vertical-align:middle; 
+   display: block;  
+   line-height: 250px; 
+   visibility: hidden;
+}
+
+
+
+/* entire container, keeps perspective */
+.tiles {
+  perspective: 1000px;
+}
+  /* flip the pane when hovered */
+  .tiles:hover .tile-flipper, .tiles.hover .tile-flipper {
+    transform: rotateY(180deg);
+  }
+
+/* flip speed goes here */
+.tile-flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+
+  position: relative;
+}
+
+/* hide back of pane during swap */
+.tiles-front, .tiles-back {
+  backface-visibility: hidden;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* front pane, placed above back */
+.tiles-front {
+  z-index: 2;
+  /* for firefox 31 */
+  transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.tiles-back {
+  transform: rotateY(180deg);
+}
+
+@media screen and (min-width: 40em) {
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .timeline {
+    &:before {
+      left: 50%;
+    }
+    ul {
+      padding-left: 0;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    li {
+      width: 42%;
+    }
+    li:nth-child(even) {
+      float: right;
+      margin-top: 2em;
+    }
+    li:nth-child(odd) {
+      float: left;
+      &:before {
+        border-top: 1em solid $gray;
+        border-right: 1em solid transparent;
+        right: -1em;
+        left: auto;
+      }
+    }
+    li:nth-of-type(2n+1) {
+      clear: both;
+    }
+  }
+}
+
+.email-contact{
+  padding:2% 0%;
+
+}
+
+.email-contact > input, 
+  .email-contact > textarea{
+  width:80%;
+  font-size:30px;
+  border-radius: 10px;
+  border-style: solid;
+  padding: 1%;
+}
+
+.submit{
+  width: 30%;
+  background: #f50057;
+  color: #ffffff;
+  border-radius: 20px;
+  font-size: 30px;
+  padding: 1%;
+  border-style: none;
+}
+
+.carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 40%;
+      height: 500px;
+      margin: auto;
+  }
