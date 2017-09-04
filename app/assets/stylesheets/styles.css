@@ -169,11 +169,11 @@ span.slogan-descript-2 {
 }
 
 .command-wear{
-  background-image: url(images/commandwear.png);
+  background-image: url(../images/commandwear.png);
 }
 
 .print-a-pal{
-  background-image: url(images/print2_white.png);
+  background-image: url(../images/print2_white.png);
   background-position-y: 40px;
 }
 

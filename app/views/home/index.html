@@ -1,6 +1,6 @@
 <head>
   <title>LP Software Consulting</title>
-  <link href="styles.css" rel="stylesheet" type="text/css">
+  <!-- <link href="styles.css" rel="stylesheet" type="text/css"> -->
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
@@ -14,6 +14,7 @@
 
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src='https://www.google.com/recaptcha/api.js'></script>
   <script src="https://use.fontawesome.com/d2a4a2be39.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
         
@@ -23,10 +24,16 @@
     <nav class="home-navigation">
       <ul class="navigation-links">
         <li class="navigation-item">
-          <a class="nav-links" href="#what-we-do">What we do</a>
+          <a class="nav-links logo-nav" href="#lp-landing">LP</a>
         </li>
         <li class="navigation-item">
           <a class="nav-links" href="#about-us">About Us</a>
+        </li>
+        <li class="navigation-item">
+          <a class="nav-links" href="#what-we-do">What we do</a>
+        </li>
+        <li class="navigation-item">
+          <a class="nav-links" href="#tech-we-use">Technolgies We Use</a>
         </li>
       </ul>
     </nav>
@@ -34,7 +41,8 @@
     <div class="slog-desc">
     </div>
      <div class="offset-2"></div>
-    <div class="slog-desc">
+    <div class="slog-desc" id="lp-landing">
+      <span class="slogan-descript logo-center">LP</span><br>
       <span class="slogan-descript">LP Software Consulting Inc.</span><br><br>
       <span class="slogan-descript-2">Leaders in Tech Innovation</span>
     </div>
@@ -95,6 +103,7 @@
                 <div class="company-info">
                   Realtime GPS tracking and communication app used by emergency responders such as Firefighter, Police Officers and Paramedics
                 </div>
+                <a href="http://commandwear.com">CommandWear</a>
               </div>
             </div>
           </div>
@@ -107,6 +116,7 @@
               <div class="tiles-back">
                 <span class="tiles-text">k</span>
                 <div class="company-info">A 2D drawing application that renders 3D images that can also produce files for 3D printing </div>
+                <a href="http://printapal.com">Print-a-Pal</a>
               </div>
             </div>
           </div>
@@ -119,7 +129,7 @@
     <div class="offset-2"></div>
 
     <h1 class="center-header">Technolgies We Use</h1>
-    <div class="row descript" id="what-we-do">
+    <div class="row descript" id="tech-we-use">
       <div class="col-sm-3">
         <img src="images/ror-logo.png" alt="ruby on rails icon" width="150" height="150">
       </div>
@@ -156,11 +166,19 @@
         </div>
       </div>
 
+
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="g-recaptcha email-recaptcha" data-sitekey="6LcaYy8UAAAAAFWJnXADo3eYFTxa0dl5k7rcLcn1"></div>
+        </div>
+      </div>
+
       <div class="row">
         <div class="col-sm-12 email-contact">
           <button class="submit">Submit</button>
         </div>
       </div>
+
     </div>
   </div>
 
@@ -178,13 +196,13 @@ $('.submit').click( function() {
   var name = $('#name-homepage').val() 
   var email = $('#email-homepage').val() 
   var message = $('.email-message').val() 
-
+  var captcha_response = $('.g-recaptcha-response').val()
   $.ajax({
     type: "POST",
-    data: {name: name, email: email, message: message},
+    data: {name: name, email: email, message: message, g_response: captcha_response},
     url: "/send_email",
     success: function(msg){
-      alert("successfully sent email");
+      alert(msg["message"]);
     }
   });
 })
